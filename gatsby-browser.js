@@ -1,7 +1,8 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/browser-apis/
- */
+import WebFont from "webfontloader"
+import "./src/assets/css/tailwind.css"
 
-// You can delete this file if you're not using it
+WebFont.load({
+  google: {
+    families: ["Roboto", "Inter", "sans-serif", "Herr Von Muellerhoff"],
+  },
+})

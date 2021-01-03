@@ -1,7 +1,21 @@
-/**
- * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/ssr-apis/
- */
-
-// You can delete this file if you're not using it
+import {
+    ApolloClient,
+    ApolloProvider,
+    HttpLink,
+    InMemoryCache,
+  } from "@apollo/client";
+  import fetch from "cross-fetch";
+  import React from "react";
+  
+  const client = new ApolloClient({
+    link: new HttpLink({
+      fetch,
+      uri: "http://localhost:8080/graphql",
+    }),
+    cache: new InMemoryCache(),
+  });
+  
+  export const wrapRootElement = ({ element }) => {
+    return <ApolloProvider client={client}>{element}</ApolloProvider>;
+  };
+  

@@ -1,0 +1,9 @@
+{
+  "possibleTypes": {
+    "ErrorInterface": [
+      "ValidationError",
+      "MongoError",
+      "RuntimeError"
+    ]
+  }
+}
